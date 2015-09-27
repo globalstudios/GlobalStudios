@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="keywords" content="Global Studios, グローバルスタジオ" />
+	<meta name="description" content="" />
+	<meta name="author" content="Global Studios" />
+	<meta name="viewport" content="width=996" />
+	<link rel="stylesheet" href="css/style.css" />
+	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+	<title>Global Studios</title>
+	
+	<!-- jQuery.jsの読み込み -->
+	<script src="./jquery-1.11.1.min.js"></script>
+
+	<!-- スムーズスクロール部分の記述 -->
+	<script>
+	$(function(){
+		// #で始まるアンカーをクリックした場合に処理
+		$('a[href^=#]').click(function() {
+	    	// スクロールの速度
+	    	var speed = 500; // ミリ秒
+	    	// 追跡メニューの高さ
+	    	var nav_height = 48;
+	    	// アンカーの値取得
+	    	var href= $(this).attr("href");
+	    	// 移動先を取得
+	    	var target = $(href == "#" || href == "" ? 'html' : href);
+			// 移動先を数値で取得
+	    	var position = target.offset().top - nav_height;
+	    	// スムーススクロール
+	    	$('body,html').animate({scrollTop:position}, speed, 'swing');
+	    	return false;
+		});
+	});
+	</script>
+</head>
+
+<body>
+	<header id="header">
+		<div>
+			<a href="index.html"><img id="logo"src="img/logo.png" alt="Global Studios" /></a>
+			<ul>
+				<a href="#ichigoichie_akashi"><li class="nowpage">一期一会</li></a>
+				<a href="#ichigoichie_drink"><li>妥協のダッちゃん</li></a>
+				<a href="#ichigoichie_drink"><li>悟りのさっくん</li></a>
+			</ul>
+		</div>
+	</header>
+	<div class="nav">
+    	<div class="nav-in">
+    		<div>
+	    		<a href="#header"><p>一期一会プロジェクト</p></a>
+	    		<ul>
+					<a href="#ichigoichie_akashi"><li>いちごいちえ</li></a>
+					<a href="#ichigoichie_drink"><li>一期一会: 酒</li></a>
+					<a href="#ichigoichie_sg"><li>Ichigoichie: Singapore</li></a>
+					<a href="#ichigoichie_kousen"><li>いちごいちえ: 高専祭</li></a>
+				</ul>
+			</div>
+    	</div>
+  	</div>
+
+	<main>
+		<section id="ichigoichie_akashi">
+			<div class="content">
+				<div>
+					<h2>いちごいちえ</h2>
+					<p>一般社団法人 明石観光協会の明石焼（玉子焼）部会に加盟しているお店を1店舗ランダムで表示するWebアプリです。どのお店に行くか迷ったとき、今まで行ったことのないお店を新たに発見したいときにサポートしてくれます。<br />	
+					このアプリは国立明石工業高等専門学校の学生が観光協会が提供するオープンデータを活用して開発した「官・学連携」の取り組みのひとつです。</p>
+				</div>
+			</div>
+		</section>
+		<section id="ichigoichie_drink">
+			<div class="content">
+				<div>
+					<h2>一期一会: 酒</h2>
+					<p>一般社団法人 明石観光協会の明石焼（玉子焼）部会に加盟しているお店を1店舗ランダムで表示するWebアプリです。どのお店に行くか迷ったとき、今まで行ったことのないお店を新たに発見したいときにサポートしてくれます。<br />	
+					このアプリは国立明石工業高等専門学校の学生が観光協会が提供するオープンデータを活用して開発した「官・学連携」の取り組みのひとつです。</p>
+				</div>
+			</div>
+		</section>
+		<section id="ichigoichie_sg">
+			<div class="content">
+				<div>
+					<h2>Ichigoichie: Singapore</h2>
+					<p>Global Studiosは2014年より活動を開始した学生技術集団です。情報技術による観光促進、地域活性化などを行っています。<br />
+					お仕事の依頼、相談などの連絡はglobalstudios.e○gmail.comまでお気楽にどうぞ。(お手数ですが、○を@に変えてご連絡ください。)</p>
+				</div>
+			</div>
+		</section>
+		<section id="ichigoichie_kousen">
+			<div class="content">
+				<div>
+					<h2>いちごいちえ: 高専祭</h2>
+					<p>Global Studiosは2014年より活動を開始した学生技術集団です。情報技術による観光促進、地域活性化などを行っています。<br />
+					お仕事の依頼、相談などの連絡はglobalstudios.e○gmail.comまでお気楽にどうぞ。(お手数ですが、○を@に変えてご連絡ください。)</p>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<footer>
+		<p>Global Studiosは2014年より活動を開始している学生技術集団です。情報技術による観光促進、地域活性化などを行っています。<br />
+				お仕事の依頼、相談などの連絡はglobalstudios.e○gmail.comまでお気楽にどうぞ。(お手数ですが、○を@に変えてご連絡ください。)</p>
+		<div id="copyright">&copy; Global Studios</div>
+	</footer>
+	<script>
+    var nav_offset = $('.nav-in').offset().top;
+    
+    $(window).on('scroll load',function(){
+      var now_offset = $(window).scrollTop();
+      if ( now_offset > nav_offset ) {
+        $('.nav-in').css('position','fixed');
+        $('.nav').css('padding','0 0 48px 0');
+      } else {
+        $('.nav-in').css('position','inherit');
+        $('.nav').css('padding','0 0');
+      }
+      
+      //$('p').text('NAV SCROLLTOP '+now_offset)
+    });
+  </script>
+</body>
+</html>
