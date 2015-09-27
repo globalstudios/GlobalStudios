@@ -54,13 +54,20 @@ li {
 
 .site-header h1 {
     width: 200px;
-    height: 28px;
-    padding: 10px 0;
+    height: 48px;
     background-image: url("../img/logo.png");
-    background-size: 200px 28px;
+    background-size: 200px 48px;
     background-position: center;
     background-repeat: no-repeat;
     float: left;
+    -moz-transition: All 0.2s ease;
+    -o-transition: All 0.2s ease;
+    -webkit-transition: All 0.2s ease;
+    transition: All 0.2s ease;
+}
+
+.site-header h1:hover {
+    opacity: 0.6666;
 }
 
 .site-header h1 a {
@@ -138,10 +145,6 @@ li {
     border-bottom: solid 1px #ddd;
 }
 
-.local-nav a {
-    color: #000;
-}
-
 .local-nav p {
     font-size: 18px;
     font-weight: bold;
@@ -162,6 +165,18 @@ li {
 
 .local-nav ul li:first-of-type {
     margin-left: 0;
+}
+
+.local-nav a {
+    color: #000;
+    -moz-transition: All 0.2s ease;
+    -o-transition: All 0.2s ease;
+    -webkit-transition: All 0.2s ease;
+    transition: All 0.2s ease;
+}
+
+.local-nav a:hover {
+    color: #999;
 }
 
 
