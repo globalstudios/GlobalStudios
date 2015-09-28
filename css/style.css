@@ -280,7 +280,6 @@ li {
 }
 
 .site-main section {
-    height: 600px;
     font-size: 20px;
     line-height: 36px;
 }
@@ -306,10 +305,17 @@ li {
 }
 
 .site-main section h2 {
-    font-size: 36px;
+    font-size: 48px;
     margin-bottom: 64px;
-    padding-bottom: 12px;
+    padding-bottom: 24px;
     border-bottom: solid 1px #fff;
+}
+
+.site-main section h3 {
+    font-size: 40px;
+    font-weight: normal;
+    margin-bottom: 32px;
+    line-height: 56px;
 }
 
 @media screen and (max-width: 768px) {
@@ -320,13 +326,33 @@ li {
     }
 }
 
-#ichigoichie_akashi {
+#ichigoichie_about {
     background-color: #fff;
     color: #111;
 }
 
-#ichigoichie_akashi h2 {
+#ichigoichie_about h2 {
     border-color: #111;
+}
+
+#ichigoichie_about img {
+    width: 980px;
+}
+
+#ichigoichie_akashi {
+    background-color: #DA532C;
+}
+
+#ichigoichie_akashi .wrap .wrap{
+    width: 480px;
+    float: left;
+}
+
+#ichigoichie_akashi img {
+    width: 440px;
+    float: left;
+    margin-left: 32px;
+    border: solid 4px #333;
 }
 
 #ichigoichie_drink {
