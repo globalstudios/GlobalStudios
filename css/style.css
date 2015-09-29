@@ -20,6 +20,8 @@ body {
     width: 100%;
     background-color: #ccc;
     font-family: "Lucida Grande", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", "Meiryo", "メイリオ", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 a {
@@ -142,17 +144,168 @@ li {
     color: #aaa;
 }
 
+/* ==============
+ *   Drawer Nav
+ * ============== */
 
-/* =============
- *   Local Nav
- * ============= */
+#drawer_wrap #drawer_button {
+    display: none;
+}
 
-.local-nav-wrapper {
+@media screen and (max-width: 620px) {
+    .site-header {
+        position: absolute;
+        z-index: 99;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 36px;
+    }
+
+    #drawer_wrap {
+        position: absolute;
+        z-index: 99;
+        top: 0;
+        left: 0;
+        wider: 100%;
+        height: 100%;
+    }
+
+    .site-main {
+        margin-top: 36px;
+    }
+
+
+    /* ===== Bar ===== */
+
+    #drawer_wrap h1 {
+        position: absolute;
+        z-index: 99;
+        top: 0;
+        left: 50%;
+        margin-left: -75px;
+        float: none;
+    }
+
+    #drawer_wrap #drawer_button {
+        display: block;
+        position:absolute;
+        z-index: 99;
+        top: 5px;
+        left: 15px;
+        width: 24px;
+        height: 24px;
+        border: solid 1px #fff;
+        -moz-border-radius: 50%;
+        -webkit-border-radius: 50%;
+        border-radius: 50%;
+        cursor: pointer;
+        -moz-transition: All 0.2s ease;
+        -o-transition: All 0.2s ease;
+        -webkit-transition: All 0.2s ease;
+        transition: All 0.2s ease;
+    }
+
+    #drawer_wrap .drawer-icon,
+    #drawer_wrap .drawer-icon:before,
+    #drawer_wrap .drawer-icon:after {
+        display: block;
+        position: absolute;
+        width: 12px;
+        height: 1px;
+        background-color: #fff;
+        content: '';
+        -moz-transition: All 0.4s ease;
+        -o-transition: All 0.4s ease;
+        -webkit-transition: All 0.4s ease;
+        transition: All 0.4s ease;
+    }
+
+    #drawer_wrap .drawer-icon {
+        top: 50%;
+        left: 5.5px;
+    }
+
+    #drawer_wrap .drawer-icon:before {
+        top: 5px;
+    }
+
+    #drawer_wrap .drawer-icon:after {
+        top: -5px;
+    }
+
+    #drawer_wrap #drawer_button:hover {
+        opacity: .65;
+    }
+
+    #drawer_wrap #drawer_button.active .drawer-icon {
+        background-color: #000;
+    }
+
+    #drawer_wrap #drawer_button.active .drawer-icon:before {
+        -webkit-transform: translateY(-5px) rotate(-315deg);
+        transform: translateY(-5px) rotate(-45deg);
+    }
+
+    #drawer_wrap #drawer_button.active .drawer-icon:after {
+        -webkit-transform: translateY(5px) rotate(315deg);
+        transform: translateY(5px) rotate(45deg);
+    }
+
+
+    /* ===== Menu ===== */
+
+    #drawer_wrap .global-nav {
+        box-sizing: border-box;
+        position: absolute;
+        z-index: 10;
+        width: 100%;
+        height: auto;
+        min-height: 100%;
+        top: -600px;
+        left: 0;
+        margin-left: 0;
+        padding: 24px;
+        -moz-transition: All 0.4s ease;
+        -o-transition: All 0.4s ease;
+        -webkit-transition: All 0.4s ease;
+        transition: All 0.4s ease;
+    }
+
+    #drawer_wrap .global-nav ul li {
+        margin-right: 0;
+        margin-bottom: 16px;
+        border-bottom: solid 1px #aaa;
+        font-size: 14px;
+        float: none;
+    }
+
+    #drawer_wrap .global-nav ul li:last-of-type {
+        margin-bottom: 0;
+    }
+}
+
+
+/* ==============================
+ *   Main
+ * ============================== */
+
+.site-main {
+    width: 100%;
+    color: #fff;
+}
+
+
+/* ==========
+ *   Header
+ * ========== */
+
+.site-main #fix_wrapper {
     width: 100%;
     padding: 0;
 }
 
-.local-nav {
+.site-main header {
     box-sizing: border-box;
     width: 100%;
     position: inherit;
@@ -163,7 +316,7 @@ li {
     border-bottom: solid 1px #ddd;
 }
 
-.local-nav p {
+.site-main header h1 {
     font-size: 18px;
     font-weight: bold;
     line-height: 48px;
@@ -171,13 +324,30 @@ li {
 }
 
 @media screen and (max-width: 768px) {
-    .local-nav p {
+    .site-main header h1 {
         font-size: 16px;
         line-height: 36px;
     }
 }
 
-.local-nav ul {
+.site-main header a {
+    color: #000;
+    -moz-transition: All 0.2s ease;
+    -o-transition: All 0.2s ease;
+    -webkit-transition: All 0.2s ease;
+    transition: All 0.2s ease;
+}
+
+.site-main header a:hover {
+    color: #999;
+}
+
+
+/* =============
+ *   Local Nav
+ * ============= */
+
+.local-nav {
     float: right;
 }
 
@@ -200,16 +370,122 @@ li {
     margin-left: 0;
 }
 
-.local-nav a {
-    color: #000;
-    -moz-transition: All 0.2s ease;
-    -o-transition: All 0.2s ease;
-    -webkit-transition: All 0.2s ease;
-    transition: All 0.2s ease;
+
+/* ===========
+ *   Content
+ * =========== */
+
+.site-main section {
+    font-size: 20px;
+    line-height: 36px;
+    overflow: hidden;
+    zoom: 1;
 }
 
-.local-nav a:hover {
-    color: #999;
+@media screen and (max-width: 768px) {
+    .site-main section {
+        font-size: 16px;
+        line-height: 28px;
+    }
+}
+
+.site-main section .wrap {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+@media screen and (max-width: 768px) {
+    .site-main section .wrap {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+}
+
+
+/* ===== Title ===== */
+
+.site-main section .wrap > h1 {
+    font-size: 48px;
+    margin-bottom: 64px;
+    padding-bottom: 24px;
+    border-bottom: solid 1px #fff;
+}
+
+@media screen and (max-width: 768px) {
+    .site-main section .wrap > h1 {
+        font-size: 28px;
+        margin-bottom: 32px;
+        padding-bottom: 6px;
+    }
+}
+
+.site-main section section h1 {
+    font-size: 40px;
+    margin-bottom: 32px;
+    line-height: 56px;
+    font-weight: normal;
+}
+
+@media screen and (max-width: 768px) {
+    .site-main section section h1 {
+        font-size: 24px;
+        margin-bottom: 16px;
+        line-height: 32px;
+    }
+}
+
+
+/* ===== Content Image ===== */
+
+.site-main section .content-image {
+    width: 50%;
+    float: right;
+}
+
+.site-main section .content-image img {
+    box-sizing: border-box;
+    width: 90%;
+    margin-left: 10%;
+    border: solid 4px #333;
+}
+
+@media screen and (max-width: 620px) {
+    .site-main section .content-image img {
+        border-width: 2px;
+    }
+}
+
+
+/* ===== Unique Content ===== */
+
+#ichigoichie_about {
+    background-color: #fff;
+    color: #111;
+}
+
+#ichigoichie_about h1 {
+    border-color: #111;
+}
+
+#ichigoichie_about img {
+    width: 100%;
+    margin-bottom: 32px;
+}
+
+#ichigoichie_akashi {
+    background-color: #DA532C;
+}
+
+#ichigoichie_drink {
+    background-color: #603CBA;
+}
+
+#ichigoichie_sg {
+    background-color: #BF1447;
+}
+
+#ichigoichie_kousen {
+    background-color: #00ABA9;
 }
 
 
@@ -267,102 +543,4 @@ li {
     .site-footer small {
         font-size: 10px;
     }
-}
-
-
-/* ==============================
- *   Main
- * ============================== */
-
-.site-main {
-    width: 100%;
-    color: #fff;
-}
-
-.site-main section {
-    font-size: 20px;
-    line-height: 36px;
-}
-
-@media screen and (max-width: 768px) {
-    .site-main section {
-        height: 400px;
-        font-size: 16px;
-        line-height: 28px;
-    }
-}
-
-.site-main section > .wrap {
-    padding-top: 80px;
-    padding-bottom: 80px;
-}
-
-@media screen and (max-width: 768px) {
-    .site-main section > .wrap {
-        padding-top: 40px;
-        padding-bottom: 40px;
-    }
-}
-
-.site-main section h2 {
-    font-size: 48px;
-    margin-bottom: 64px;
-    padding-bottom: 24px;
-    border-bottom: solid 1px #fff;
-}
-
-.site-main section h3 {
-    font-size: 40px;
-    font-weight: normal;
-    margin-bottom: 32px;
-    line-height: 56px;
-}
-
-@media screen and (max-width: 768px) {
-    .site-main section h2 {
-        font-size: 28px;
-        margin-bottom: 32px;
-        padding-bottom: 6px;
-    }
-}
-
-#ichigoichie_about {
-    background-color: #fff;
-    color: #111;
-}
-
-#ichigoichie_about h2 {
-    border-color: #111;
-}
-
-#ichigoichie_about img {
-    width: 980px;
-}
-
-#ichigoichie_akashi {
-    background-color: #DA532C;
-}
-
-#ichigoichie_akashi .wrap .wrap{
-    width: 480px;
-    float: left;
-}
-
-#ichigoichie_akashi img {
-    width: 440px;
-    float: left;
-    margin-left: 32px;
-    border: solid 4px #333;
-}
-
-#ichigoichie_drink {
-    background-color: #603CBA;
-}
-
-#ichigoichie_sg {
-    background-color: #BF1447;
-}
-
-#ichigoichie_kousen {
-    background-color: #00ABA9;
 }

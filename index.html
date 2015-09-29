@@ -15,96 +15,105 @@
 
 <body>
   <header class="site-header">
-    <div class="wrap">
+    <div id="drawer_wrap" class="wrap">
       <h1><a href="./"><span>Global Studios</span></a></h1>
-
       <nav class="global-nav">
         <ul>
-          <li class="nowpage"><a href="#ichigoichie_akashi">一期一会</a></li>
-          <li><a href="#ichigoichie_drink">妥協のダッちゃん</a></li>
-          <li><a href="#ichigoichie_drink">悟りのさっくん</a></li>
+          <li class="nowpage"><a href="./">一期一会</a></li>
+          <li><a href="./">妥協のダッちゃん</a></li>
+          <li><a href="./">悟りのさっくん</a></li>
         </ul>
       </nav>
+      <div id="drawer_button"><span class="drawer-icon"></span></div>
     </div>
   </header>
 
-  <div class="local-nav-wrapper">
-    <nav class="local-nav">
-      <div class="wrap">
-        <p><a href="#">一期一会プロジェクト</a></p>
-        <ul>
-          <li><a href="#ichigoichie_akashi">いちごいちえ</a></li>
-          <li><a href="#ichigoichie_drink">一期一会: 酒</a></li>
-          <li><a href="#ichigoichie_sg">Ichigoichie: Singapore</a></li>
-          <li><a href="#ichigoichie_kousen">いちごいちえ: 高専祭</a></li>
-        </ul>
-      </div>
-    </nav>
-  </div>
-
   <main class="site-main">
-    <section id="ichigoichie_about">
-      <div class="wrap">
-        <img src="img/logo_ichigoichie.png">
-        <h2>思いがけない一会をお届けします。</h2>
-        <p>
-          一期一会プロジェクトとは国内外のそれぞれ地域の名物の店舗などをランダムで1つ表示する提案型システムの開発をするプロジェクトです。<br />
-          名物の店舗というのは、よく数が多いもので、地元の人であっても行ったことのない店舗というのは存在しがちで、観光客はどの店舗に行こうか迷いがちです。同じ名物を取り扱っていても、実際行ってみるとそれぞれ各店舗の個性や違いがあります。それを発見する楽しさを得るためのアプリを開発しました。<br />
-          見ていて楽しいルーレットアニメーション、今日が定休日の店舗除外や現在地からの距離指定などの機能を搭載し、なかったかもしれない素敵な一会を生み出します。<br />
-          今後も多言語対応化、サポート機能の実装やさらなるアプリの開発を行っていく予定です。 
-        </p>
+    <article>
+      <div id="fix_wrapper">
+        <header id="fix_bar">
+          <div class="wrap">
+            <h1><a href="#">一期一会プロジェクト</a></h1>
+            <nav class="local-nav">
+              <ul>
+                <li><a href="#ichigoichie_akashi">いちごいちえ</a></li>
+                <li><a href="#ichigoichie_drink">一期一会: 酒</a></li>
+                <li><a href="#ichigoichie_sg">Ichigoichie: Singapore</a></li>
+                <li><a href="#ichigoichie_kousen">いちごいちえ: 高専祭</a></li>
+              </ul>
+            </nav>
+          </div>
+        </header>
       </div>
-    </section>
 
-    <section id="ichigoichie_akashi">
-      <div class="wrap">
-        <h2>いちごいちえ</h2>
+      <section id="ichigoichie_about">
         <div class="wrap">
-          <h3>日本標準時子午線が通る明石市の名物</h3>
+          <img src="img/logo_ichigoichie.png">
+          <h1>思いがけない一会をお届けします。</h1>
+          <p>
+            一期一会プロジェクトとは国内外のそれぞれ地域の名物の店舗などをランダムで1つ表示する提案型システムの開発をするプロジェクトです。<br />
+            名物の店舗というのは、よく数が多いもので、地元の人であっても行ったことのない店舗というのは存在しがちで、観光客はどの店舗に行こうか迷いがちです。
+            同じ名物を取り扱っていても、実際行ってみるとそれぞれ各店舗の個性や違いがあります。それを発見する楽しさを得るためのアプリを開発しました。<br />
+            見ていて楽しいルーレットアニメーション、今日が定休日の店舗除外や現在地からの距離指定などの機能を搭載し、なかったかもしれない素敵な一会を生み出します。<br />
+            今後も多言語対応化、サポート機能の実装やさらなるアプリの開発を行っていく予定です。
+          </p>
+        </div>
+      </section>
+
+      <section id="ichigoichie_akashi">
+        <div class="wrap">
+          <h1>いちごいちえ</h1>
+          <section>
+            <div class="content-image">
+              <img src="img/ichigoichie_img.png">
+            </div>
+            <div class="content-body">
+              <h1>日本標準時子午線が通る明石市の名物</h1>
+              <p>
+                一般社団法人 明石観光協会の明石焼（玉子焼）部会に加盟しているお店を1店舗ランダムで表示するWebアプリです。
+                どのお店に行くか迷ったとき、今まで行ったことのないお店を新たに発見したいときにサポートしてくれます。<br />
+                このアプリは国立明石工業高等専門学校の学生が観光協会が提供するオープンデータを活用して開発した「官・学連携」の取り組みのひとつです。
+              </p>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <section id="ichigoichie_drink">
+        <div class="wrap">
+          <h1>一期一会: 酒</h1>
           <p>
             一般社団法人 明石観光協会の明石焼（玉子焼）部会に加盟しているお店を1店舗ランダムで表示するWebアプリです。
             どのお店に行くか迷ったとき、今まで行ったことのないお店を新たに発見したいときにサポートしてくれます。<br />
             このアプリは国立明石工業高等専門学校の学生が観光協会が提供するオープンデータを活用して開発した「官・学連携」の取り組みのひとつです。
           </p>
         </div>
-        <img src="img/ichigoichie_img.png">
-      </div>
-    </section>
+      </section>
 
-    <section id="ichigoichie_drink">
-      <div class="wrap">
-        <h2>一期一会: 酒</h2>
-        <p>
-          一般社団法人 明石観光協会の明石焼（玉子焼）部会に加盟しているお店を1店舗ランダムで表示するWebアプリです。
-          どのお店に行くか迷ったとき、今まで行ったことのないお店を新たに発見したいときにサポートしてくれます。<br />
-          このアプリは国立明石工業高等専門学校の学生が観光協会が提供するオープンデータを活用して開発した「官・学連携」の取り組みのひとつです。
-        </p>
-      </div>
-    </section>
+      <section id="ichigoichie_sg">
+        <div class="wrap">
+          <h1>Ichigoichie: Singapore</h1>
+          <p>
+            Global Studiosは2014年より活動を開始した学生技術集団です。
+            情報技術による観光促進、地域活性化などを行っています。<br />
+            お仕事の依頼、相談などの連絡はglobalstudios.e○gmail.comまでお気楽にどうぞ。
+            (お手数ですが、○を@に変えてご連絡ください。)
+          </p>
+        </div>
+      </section>
 
-    <section id="ichigoichie_sg">
-      <div class="wrap">
-        <h2>Ichigoichie: Singapore</h2>
-        <p>
-          Global Studiosは2014年より活動を開始した学生技術集団です。
-          情報技術による観光促進、地域活性化などを行っています。<br />
-          お仕事の依頼、相談などの連絡はglobalstudios.e○gmail.comまでお気楽にどうぞ。
-          (お手数ですが、○を@に変えてご連絡ください。)
-        </p>
-      </div>
-    </section>
-
-    <section id="ichigoichie_kousen">
-      <div class="wrap">
-        <h2>いちごいちえ: 高専祭</h2>
-        <p>
-          Global Studiosは2014年より活動を開始した学生技術集団です。
-          情報技術による観光促進、地域活性化などを行っています。<br />
-          お仕事の依頼、相談などの連絡はglobalstudios.e○gmail.comまでお気楽にどうぞ。
-          (お手数ですが、○を@に変えてご連絡ください。)
-        </p>
-      </div>
-    </section>
+      <section id="ichigoichie_kousen">
+        <div class="wrap">
+          <h1>いちごいちえ: 高専祭</h1>
+          <p>
+            Global Studiosは2014年より活動を開始した学生技術集団です。
+            情報技術による観光促進、地域活性化などを行っています。<br />
+            お仕事の依頼、相談などの連絡はglobalstudios.e○gmail.comまでお気楽にどうぞ。
+            (お手数ですが、○を@に変えてご連絡ください。)
+          </p>
+        </div>
+      </section>
+    </article>
   </main>
 
   <footer class="site-footer">
@@ -123,5 +132,6 @@
   <script src="js/lib/jquery.min.js"></script>
   <script src="js/fixNav.js"></script>
   <script src="js/scroll.js"></script>
+  <script src="js/drawerNav.js"></script>
 </body>
 </html>
