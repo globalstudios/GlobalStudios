@@ -1,26 +1,37 @@
 $(function() {
 
-  var $navBtn = $("#drawer_button");
-  var $navWrap = $(".site-header");
-  var $navBody = $("#drawer_wrap .global-nav");
-  var bodySpeed = 100;
-  var wrapSpeed = 400;
+  $(".drawer-btn, .drawer-wrap a").click(function() {
+    var $navBody, $navWrap, $navBtn;
+    var bodySpeed = 200;
+    var wrapSpeed = 400;
+    var isLink = $(this)[0].localName == "a";
 
-  $navBtn.click(function() {
-    $(this).toggleClass("active");
+    if(isLink) {
+      if($(this).parent()[0].localName == "h1")
+        $navBody = $(this).parent().next();
+      else
+        $navBody = $(this).parent().parent().parent();
+      $navBtn  = $navBody.next();
+    } else {
+      $navBody = $(this).prev();
+      $navBtn  = $(this);
+    }
+    $navWrap = $navBody.parent().parent();
 
-    if($(this).hasClass("active")) {
-      $navBody.animate({"top": "36"}, bodySpeed);
+    $navBtn.toggleClass("active");
+
+    if($navBtn.hasClass("active") && !isLink) {
+      $navBody.animate({"top": "48px"}, bodySpeed);
       $navWrap.animate({
         "height": "100%",
-        "opacity": ".8"
+        "opacity": "1"
       }, wrapSpeed);
     }
     else {
-      $navBody.animate({"top": "-600"}, bodySpeed);
+      $navBody.animate({"top": "-1000px"}, bodySpeed);
       $navWrap.animate({
-        "height": "36px",
-        "opacity": "1"
+        "height": "48px",
+        "opacity": ".8"
       }, wrapSpeed);
     }
   });
