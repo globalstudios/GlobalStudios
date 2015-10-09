@@ -4,10 +4,13 @@ $(function() {
     var $navBody, $navWrap, $navBtn;
     var bodySpeed = 200;
     var wrapSpeed = 400;
-    var isLink = $(this)[0].localName == "a";
+    var opacity;
+    var isLink  = $(this)[0].localName == "a";
+    var isTitle = $(this).parent()[0].localName == "h1";
 
+    // Setting
     if(isLink) {
-      if($(this).parent()[0].localName == "h1")
+      if(isTitle)
         $navBody = $(this).parent().next();
       else
         $navBody = $(this).parent().parent().parent();
@@ -18,8 +21,16 @@ $(function() {
     }
     $navWrap = $navBody.parent().parent();
 
-    $navBtn.toggleClass("active");
+    if($navWrap.attr("id") == "global_nav")
+      opacity = ".8";
+    else
+      opacity = ".935";
 
+    // On Active
+    if(!( isTitle && !$navBtn.hasClass("active") ))
+      $navBtn.toggleClass("active");
+
+    // Change Style
     if($navBtn.hasClass("active") && !isLink) {
       $navBody.animate({"top": "48px"}, bodySpeed);
       $navWrap.animate({
@@ -31,7 +42,7 @@ $(function() {
       $navBody.animate({"top": "-1000px"}, bodySpeed);
       $navWrap.animate({
         "height": "48px",
-        "opacity": ".8"
+        "opacity": opacity
       }, wrapSpeed);
     }
   });
